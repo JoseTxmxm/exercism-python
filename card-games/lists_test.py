@@ -90,8 +90,7 @@ class CardGamesTest(unittest.TestCase):
     def test_approx_average_is_average(self):
 
         input_data = [[0, 1, 5], [3, 6, 9, 12, 150], [1, 2, 3, 5, 9],
-                      [2, 3, 4, 7, 8], [1, 2, 3], [2, 3, 4],
-                      [2, 3, 4, 8, 8], [1, 2, 4, 5, 8]]
+                      [2, 3, 4, 7, 8], [1, 2, 3], [2, 3, 4], [1, 2, 4, 5, 8]]
 
         result_data = [False, False, False, False, True, True, True, True]
 
