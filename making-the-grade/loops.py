@@ -18,7 +18,8 @@ def count_failed_students(student_scores):
     :return: int - count of student scores at or below 40.
     """
 
-    pass
+    for score in student_scores:
+        return student_scores.append(score < 40)
 
 
 def above_threshold(student_scores, threshold):
@@ -29,7 +30,8 @@ def above_threshold(student_scores, threshold):
     :return: list - of integer scores that are at or above the "best" threshold.
     """
 
-    pass
+    for score in student_scores:
+        return student_scores.append(score >= threshold)
 
 
 def letter_grades(highest):

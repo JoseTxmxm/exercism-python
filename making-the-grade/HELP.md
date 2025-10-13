@@ -33,9 +33,8 @@ Next, run the `pytest` command in your terminal, replacing `{exercise_test.py}` 
 
 Linux/MacOS
 ```bash
-$ python3 -m pytest -o markers=task {exercise_test.py}
 ==================== 7 passed in 0.08s ====================
-```
+```Z
 
 Windows
 ```powershell
