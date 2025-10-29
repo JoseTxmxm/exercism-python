@@ -54,7 +54,17 @@ def letter_grades(highest):
             86 <= "A" <= 100
     """
 
-    pass
+    failing_max = 40
+    d_threshold = failing_max + 1
+    grade_range = highest - failing_max
+    interval_width = grade_range // 4
+    lower_thresholds = [d_threshold]
+    current_threshold = d_threshold
+    for _ in range(3):
+        current_threshold += interval_width
+        lower_thresholds.append(current_threshold)
+           
+    return lower_thresholds
 
 
 def student_ranking(student_scores, student_names):
