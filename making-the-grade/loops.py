@@ -54,7 +54,17 @@ def letter_grades(highest):
             86 <= "A" <= 100
     """
 
-    pass
+    failing_max = 40
+    d_threshold = failing_max + 1
+    grade_range = highest - failing_max
+    interval_width = grade_range // 4
+    lower_thresholds = [d_threshold]
+    current_threshold = d_threshold
+    for _ in range(3):
+        current_threshold += interval_width
+        lower_thresholds.append(current_threshold)
+           
+    return lower_thresholds
 
 
 def student_ranking(student_scores, student_names):
@@ -64,8 +74,12 @@ def student_ranking(student_scores, student_names):
     :param student_names: list - of string names by exam score in descending order.
     :return: list - of strings in format ["<rank>. <student name>: <score>"].
     """
-
-    pass
+    
+    current_ranking = []
+    for rank, (name, score) in enumerate(zip(student_names, student_scores), start=1):
+        string_list = f'{rank}. {name}: {score}'
+        current_ranking.append(string_list)
+    return current_ranking
 
 
 def perfect_score(student_info):
@@ -75,4 +89,10 @@ def perfect_score(student_info):
     :return: list - first `[<student name>, 100]` or `[]` if no student score of 100 is found.
     """
 
-    pass
+    for student_data in student_info:
+        score = student_data[1]
+        name = student_data[0]
+        if score == 100:
+            return student_data
+    return []
+        
