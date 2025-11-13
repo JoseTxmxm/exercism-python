@@ -77,5 +77,19 @@ def clean_up(combined_record_group):
 
     (see HINTS.md for an example).
     """
+    cleaned_records = [
+    ]
+    for record in combined_record_group:
+        new_records_tuple = (record[0], record[2], record[3], record[4])
+        record_string = str(new_records_tuple)
+        cleaned_records.append(record_string)
+    return "\n".join(cleaned_records) + "\n"
 
-    return str(combined_record_group)
+    """
+    cleaned_records = [
+        str((record[0], record[2], record[3], record[4]))
+        for record in combined_record_group
+    ]
+    return "\n".join(cleaned_records) + "\n"
+
+    """
